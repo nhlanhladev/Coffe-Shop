@@ -1,0 +1,51 @@
+<div
+  *ngIf="alert"
+  data-auto-dismiss="2000"
+  class="alert alert-warning alert-dismissible fade show"
+  role="alert"
+>
+  {{ message }}
+  <button
+    (click)="closeAlert()"
+    type="button"
+    class="close"
+    data-dismiss="alert"
+    aria-label="Close"
+  >
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<section>
+  <h2>checkOut</h2>
+  <div class="table-responsive">
+    <table class="w3-table">
+      <tr>
+        <th>Name</th>
+        <th>Price</th>
+      </tr>
+      <tr *ngFor="let checkOut of checkOuts">
+        <td>{{ checkOut.name }}</td>
+        <td>{{ checkOut.price }}</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><b>Total Price: </b>{{ getTotalPrice() }}</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>
+          <b>Total Points: </b>{{ getTotalPoints() }}
+          <button
+            (click)="redeem(getTotalPoints())"
+            type="button"
+            class="button"
+            class="btn btn-primary"
+          >
+            Redeem Points
+          </button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</section>

@@ -1,0 +1,27 @@
+<section>
+  <h2>Cart</h2>
+  <div class="table-responsive">
+    <table class="w3-table">
+      <tr>
+        <th>Name</th>
+        <th>Price</th>
+      </tr>
+      <tr *ngFor="let cart of carts">
+        <td>{{ cart.name }}</td>
+        <td>{{ cart.price }}</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><b>Total Price: </b>{{ getTotalPrice() }}</td>
+      </tr>
+    </table>
+    <button
+      (click)="checkOut()"
+      type="button"
+      class="button"
+      class="btn btn-primary"
+    >
+      CheckOut
+    </button>
+  </div>
+</section>
